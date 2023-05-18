@@ -1,4 +1,7 @@
 import time
+import random
+import os
+import shutil
 # print("I love pizza ")
 # print("Shut the fuck up")
 # name = "Ndulue Vera "
@@ -88,71 +91,167 @@ import time
 #     else:
 #         print(i)
 # List
-food = ["pizza", "tomato", "Hamburger", "spaghetti", "pudding"]
-food[0] = "sushi"
-# print(food[0])
-food.append("cake")
-food.append("Ice cream")
-for x in food:
-    print(x, end=" ")
-
-# 2d list
-drinks = ["coffee","soda", "tea"]
-dinner = ["pizza", "hamburger", "hotdog"]
-desert = ["cake", "ice cream"]
-
-foods = [drinks, dinner, desert]
-print (foods)
-print(foods[1][2])
-
-
-# tuple
-
-student = ("Vera", 21, "female")
-print(student.count("vera"))
-print(student.index("female"))
-
-for x in student:
-    print(x)
-if "vera" in student:
-    print("Vera is here ")
-
-    # Sets
-
-utensils = {"fork", "spoon", "knife"}
-dishes = {"bowl", "plates", "cup"}
-
-# utensils.add("napkin")
-# utensils.remove("spoon")
-utensils.update(dishes)
-for x in utensils:
-    print(x)
-
-# dictionary
-
-capitals = {"USA":"Washington DC", "India":"New Dehli",
-            "China":"Beijing",
-            "Russian":"Moscow"}
-capitals.update({"Germany":"Berlin"})
-# print(capitals["Russian"])
-# print(capitals.keys())
-print(capitals.items())
-for key,value in capitals.items():
-    print(key,value)
-
-# Function in python
-def hello(first_name, second_name, age):
-    print("Hello " + first_name + "  " + second_name)
-    print("You are " + str(age) + " years old")
-    print("Have a nice day")
-hello("Vera", "Ndulue",21)
-hello("Phyll", "Ndulue",20)
-hello("Wisdom","Ahuzi", 19)
+# food = ["pizza", "tomato", "Hamburger", "spaghetti", "pudding"]
+# food[0] = "sushi"
+# # print(food[0])
+# food.append("cake")
+# food.append("Ice cream")
+# for x in food:
+#     print(x, end=" ")
+#
+# # 2d list
+# drinks = ["coffee","soda", "tea"]
+# dinner = ["pizza", "hamburger", "hotdog"]
+# desert = ["cake", "ice cream"]
+#
+# foods = [drinks, dinner, desert]
+# print (foods)
+# print(foods[1][2])
+#
+#
+# # tuple
+#
+# student = ("Vera", 21, "female")
+# print(student.count("vera"))
+# print(student.index("female"))
+#
+# for x in student:
+#     print(x)
+# if "vera" in student:
+#     print("Vera is here ")
+#
+#     # Sets
+#
+# utensils = {"fork", "spoon", "knife"}
+# dishes = {"bowl", "plates", "cup"}
+#
+# # utensils.add("napkin")
+# # utensils.remove("spoon")
+# utensils.update(dishes)
+# for x in utensils:
+#     print(x)
+#
+# # dictionary
+#
+# capitals = {"USA":"Washington DC", "India":"New Dehli",
+#             "China":"Beijing",
+#             "Russian":"Moscow"}
+# capitals.update({"Germany":"Berlin"})
+# # print(capitals["Russian"])
+# # print(capitals.keys())
+# print(capitals.items())
+# for key,value in capitals.items():
+#     print(key,value)
+#
+# # Function in python
+# def hello(first_name, second_name, age):
+#     print("Hello " + first_name + "  " + second_name)
+#     print("You are " + str(age) + " years old")
+#     print("Have a nice day")
+# hello("Vera", "Ndulue",21)
+# hello("Phyll", "Ndulue",20)
+# hello("Wisdom","Ahuzi", 19)
 
 # return statement
-def multiply(number1, number2):
-    result = number1 * number2
-    return result
-x = multiply(6,8)
+# def multiply(number1, number2):
+#     result = number1 * number2
+#     return result
+# x = multiply(6,8)
+# print(x)
+
+
+# x = int(input("Enter your score"))
+# y = input("Enter your age")
+# h_age = y.split()
+# print(h_age)
+# for i in h_age:
+#     print(i)
+
+
+# Nested function
+# print(round(abs(float(input("Enter a whole positive number")))))
+
+# Variable scope
+# def display_name(name):
+#     # name = "code"
+#     print(name)
+# display_name("code")
+
+
+# def add(num1, num2, num3):
+#     sum = num1 + num2 + num3
+#     return sum
+# print(add(1,2,3))
+
+# Another for function
+# def hello (first, last, middle):
+#     print("Hello " + " " + first + " " + middle + " " + last)
+# hello(first="Vera", middle="Chiadikobi", last="Ndulue")
+
+# str format
+# animal = "cow"
+# item = "moon"
+# print("The {} jumped over the {}".format(animal, item))
+# print("The {1} jumped over the {0}".format(animal, item)) #positional argument
+# text = "The {} jumped over the {}"
+# print(text.format(animal, item))
+# random
+x = random.randint(1, 6)
+y = random.random()
+mylist = ['rock', 'paper', 'scissors']
+z = random.choice(mylist)
+print(z)
+cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'J','Q','K','A']
+random.shuffle(cards)
+print(cards)
 print(x)
+print(y)
+
+
+# exception handling
+try:
+  numerator = int(input("Enter a number to divide: "))
+  denominator = int(input("Enter a number to divide by: "))
+  result = numerator / denominator
+except ZeroDivisionError as e:
+    print(e)
+    print("You can't divide by zero! Idiot!")
+except ValueError as e:
+    print(e)
+    print("Enter only numbers please")
+except Exception as e:
+    print(e)
+    print("Something went wrong :(")
+else:
+    print(result)
+finally:
+    print("This will always execute")
+
+#file detection
+path = "C:\\Users\\Raline\\Documents\\python.txt"
+
+if os.path.exists(path):
+    print("That location exist")
+    if os.path.isfile(path):
+        print("That is a file")
+    elif os.path.isdir(path):
+        print("That is a directory")
+    else:
+        print("That is not a directory")
+else:
+    print("That location doesn't exist")
+
+# read a file
+with open('python.txt') as file:
+     print(file.read())
+#reading file
+text = "Yooooooooooo\n This is some text, have a nice day"
+with open('python.txt', 'w') as file:
+     print(file.write(text))
+# Copy file
+shutil.copy2('python.txt', 'copy.txt')
+
+# Write file
+paths = 'copy.txt'
+os.remove(paths)
 
