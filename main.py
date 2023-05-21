@@ -196,62 +196,62 @@ import shutil
 # text = "The {} jumped over the {}"
 # print(text.format(animal, item))
 # random
-x = random.randint(1, 6)
-y = random.random()
-mylist = ['rock', 'paper', 'scissors']
-z = random.choice(mylist)
-print(z)
-cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'J','Q','K','A']
-random.shuffle(cards)
-print(cards)
-print(x)
-print(y)
-
-
-# exception handling
-try:
-  numerator = int(input("Enter a number to divide: "))
-  denominator = int(input("Enter a number to divide by: "))
-  result = numerator / denominator
-except ZeroDivisionError as e:
-    print(e)
-    print("You can't divide by zero! Idiot!")
-except ValueError as e:
-    print(e)
-    print("Enter only numbers please")
-except Exception as e:
-    print(e)
-    print("Something went wrong :(")
-else:
-    print(result)
-finally:
-    print("This will always execute")
+# x = random.randint(1, 6)
+# y = random.random()
+# mylist = ['rock', 'paper', 'scissors']
+# z = random.choice(mylist)
+# print(z)
+# cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'J','Q','K','A']
+# random.shuffle(cards)
+# print(cards)
+# print(x)
+# print(y)
+#
+#
+# # exception handling
+# try:
+#   numerator = int(input("Enter a number to divide: "))
+#   denominator = int(input("Enter a number to divide by: "))
+#   result = numerator / denominator
+# except ZeroDivisionError as e:
+#     print(e)
+#     print("You can't divide by zero! Idiot!")
+# except ValueError as e:
+#     print(e)
+#     print("Enter only numbers please")
+# except Exception as e:
+#     print(e)
+#     print("Something went wrong :(")
+# else:
+#     print(result)
+# finally:
+#     print("This will always execute")
 
 #file detection
-path = "C:\\Users\\Raline\\Documents\\python.txt"
-
-if os.path.exists(path):
-    print("That location exist")
-    if os.path.isfile(path):
-        print("That is a file")
-    elif os.path.isdir(path):
-        print("That is a directory")
-    else:
-        print("That is not a directory")
-else:
-    print("That location doesn't exist")
-
-# read a file
-with open('python.txt') as file:
-     print(file.read())
-#reading file
-text = "Yooooooooooo\n This is some text, have a nice day"
-with open('python.txt', 'w') as file:
-     print(file.write(text))
-# Copy file
-shutil.copy2('python.txt', 'copy.txt')
-
-# Write file
-paths = 'copy.txt'
-os.remove(paths)
+# path = "C:\\Users\\Raline\\Documents\\python.txt"
+#
+# if os.path.exists(path):
+#     print("That location exist")
+#     if os.path.isfile(path):
+#         print("That is a file")
+#     elif os.path.isdir(path):
+#         print("That is a directory")
+#     else:
+#         print("That is not a directory")
+# else:
+#     print("That location doesn't exist")
+#
+# # read a file
+# with open('python.txt') as file:
+#      print(file.read())
+# #reading file
+# text = "Yooooooooooo\n This is some text, have a nice day"
+# with open('python.txt', 'w') as file:
+#      print(file.write(text))
+# # Copy file
+# shutil.copy2('python.txt', 'copy.txt')
+#
+# # Write file
+# paths = 'copy.txt'
+# os.remove(paths)
 
