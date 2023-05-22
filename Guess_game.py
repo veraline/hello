@@ -1,13 +1,13 @@
 def new_game():
     guesses = []
     correct_guesses = 0
-    question_num  = 1
+    question_num = 1
     for key in questions:
         print("-----------------")
         print(key)
         for i in options[question_num-1]:
             print(i)
-        guess = input('Enter (A, B,C, or D):')
+        guess = input('Enter (A, B, C, or D):')
         guess = guess.upper()
         check_answer(questions.get(key), guess)
         guesses.append(guess)
@@ -54,7 +54,7 @@ def play_again():
 questions = {
     "Who created Python?: ": "A",
     "What year was Pytho created? :": "B",
-    "Python is tributed to which comedy group?: " : "C",
+    "Python is tributed to which comedy group?: ": "C",
     "Is the Earth round?:": "A"
 }
 options = [["A. Guido Van Rossum", "B. Elon Musk", "C.Bill Gates", "D. Mark Zukerburg"],
@@ -65,4 +65,4 @@ options = [["A. Guido Van Rossum", "B. Elon Musk", "C.Bill Gates", "D. Mark Zuke
 new_game()
 while play_again():
     new_game()
-print('Byeeeee!')
+print('Bye eeee!')
